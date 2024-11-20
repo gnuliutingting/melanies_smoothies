@@ -2,7 +2,7 @@
 
       # Import necessary libraries
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+# from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
@@ -17,7 +17,9 @@ st.write("The name on your smoothie will be", name_on_order)
 
 
 # Snowflake connection
-session = get_active_session()
+# session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
 
 # Get the list of fruits from Snowflake table
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME')).collect()
