@@ -35,10 +35,13 @@ ingredients_list = st.multiselect(
 
 # Only process if ingredients are selected
 if ingredients_list:
-    ingredients_string = ' '.join(ingredients_list)  # Combine ingredients into a single string
-    st.subheader(ingredients_list + 'Nutriention Information') 
-    smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + ingredients_list)
-    sf_df = st.dataframe(data= smoothiefroot_response.json(), use_container_width = True)
+    ingredient_string =''
+      
+   for fruit_chosen in ingredients_list:
+         ingredient_string += fruit_chosen +''
+         st.subheader(ingredients_list + 'Nutriention Information') 
+         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + ingredients_list)
+         sf_df = st.dataframe(data= smoothiefroot_response.json(), use_container_width = True)
 
     # Show selected ingredients
     st.write(f"You have selected: {ingredients_string}")
