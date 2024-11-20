@@ -44,6 +44,9 @@ if ingredients_list:
 
     if time_to_insert:
 
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
 
         # Sanitize ingredients_string and name_on_order for SQL execution by quoting the values
         ingredients_string = f"'{ingredients_string}'"
