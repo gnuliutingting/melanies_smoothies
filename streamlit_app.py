@@ -44,7 +44,7 @@ if ingredients_list:
          sf_df = st.dataframe(data= smoothiefroot_response.json(), use_container_width = True)
 
           # Show selected ingredients
-          st.write(f"You have selected: {ingredients_string}")
+st.write(f"You have selected: {ingredients_string}")
       
 # Insert the ingredients into Snowflake when the submit button is pressed
 time_to_insert = st.button('Submit Order')
