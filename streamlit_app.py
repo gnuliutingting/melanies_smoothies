@@ -39,9 +39,9 @@ if ingredients_list:
       
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen +' '
-         st.subheader(ingredients_list + 'Nutriention Information') 
-         smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + ingredients_list)
-         sf_df = st.dataframe(data= smoothiefroot_response.json(), use_container_width = True)
+        st.subheader(ingredients_list + 'Nutriention Information') 
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + ingredients_list)
+        sf_df = st.dataframe(data= smoothiefroot_response.json(), use_container_width = True)
 
           # Show selected ingredients
 st.write(f"You have selected: {ingredients_string}")
