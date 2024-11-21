@@ -47,7 +47,7 @@ if ingredients_list:
         my_insert_stmt = """ insert into smoothies.public.orders(ingredients)
             values ('""" + ingredients_string + """')"""
 
-        st.write(my_insert_stmt)
+st.write(my_insert_stmt)
       
 # Insert the ingredients into Snowflake when the submit button is pressed
 time_to_insert = st.button('Submit Order')
