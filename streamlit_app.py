@@ -47,22 +47,12 @@ if ingredients_list:
         my_insert_stmt = """ insert into smoothies.public.orders(ingredients)
             values ('""" + ingredients_string + """')"""
 
-        #st.write(my_insert_stmt)
+        st.write(my_insert_stmt)
       
 # Insert the ingredients into Snowflake when the submit button is pressed
 time_to_insert = st.button('Submit Order')
       
 if time_to_insert:
-      
-      
-# Sanitize ingredients_string and name_on_order for SQL execution by quoting the values
-      ingredients_string = f"'{ingredients_string}'"
-      name_on_order = f"'{name_on_order}'"
-# SQL Insert statement using placeholders to prevent SQL injection
-      my_insert_stmt = f""" 
-      INSERT INTO smoothies.public.orders(ingredients, name_on_order) 
-      VALUES ({ingredients_string}, {name_on_order})
-       """
               
  # Execute the SQL statement
 session.sql(my_insert_stmt).collect()
