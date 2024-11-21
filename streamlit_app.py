@@ -1,8 +1,8 @@
 
 
       # Import necessary libraries
-import streamlit as st
 import pandas as pd
+import streamlit as st
 import requests
 from snowflake.snowpark.functions import col
 
