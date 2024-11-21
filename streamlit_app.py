@@ -52,13 +52,13 @@ if ingredients_list:
 # Insert the ingredients into Snowflake when the submit button is pressed
 time_to_insert = st.button('Submit Order')
       
-       if time_to_insert:
+if time_to_insert:
               
  # Execute the SQL statement
-       session.sql(my_insert_stmt).collect()
+session.sql(my_insert_stmt).collect()
       
  # Show success message
-       st.success(f"Your Smoothie is ordered,{name_on_order}!", icon="✅")
+st.success(f"Your Smoothie is ordered,{name_on_order}!", icon="✅")
 
 
 
